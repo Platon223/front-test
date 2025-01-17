@@ -55,8 +55,8 @@ function check() {
             const dashBoard = name;
             localStorage.setItem('dash-name', dashBoard);
 
-            if(name !== localStorage.getItem('dash-name')) {
-                console.log(`A ${localStorage.getItem('dash-name')} was deleted`);
+            if(name !== localStorage.getItem('dash-name') {
+                console.log('hello');
                 const accName = localStorage.getItem('dash-name');
                 socket.emit('delete-acc', accName);
             }
