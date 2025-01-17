@@ -1,4 +1,4 @@
-const socket = io('https://back-test-lfvr.onrender.com');
+const socket = io('https://back-test-1-v9or.onrender.com');
 
 document.querySelector('.dash').innerHTML = localStorage.getItem('dash-name');
 
