@@ -30,10 +30,7 @@ function check() {
     socket.on('launch-accounts', (usernames) => {
         console.log(usernames);
 
-        if(name !== localStorage.getItem('dash-name')) {
-            const accName = localStorage.getItem('dash-name');
-            socket.emit('delete-acc', accName);
-        }
+    
 
         let nameInUse = false;
         usernames.forEach(ur => {
@@ -57,6 +54,11 @@ function check() {
 
             const dashBoard = name;
             localStorage.setItem('dash-name', dashBoard);
+
+                if(name !== localStorage.getItem('dash-name')) {
+                    const accName = localStorage.getItem('dash-name');
+                    socket.emit('delete-acc', accName);
+                }
 
             document.querySelector('.dash').innerHTML = localStorage.getItem('dash-name');
 
