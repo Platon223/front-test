@@ -51,17 +51,19 @@ function check() {
             const user = { nm: name, loged: loged };
             socket.emit('send-acc', user);
 
+                 if(name !== localStorage.getItem('dash-name')) {
+                        console.log('hello');
+                        const accName = localStorage.getItem('dash-name');
+                        socket.emit('delete-acc', accName);
+                 } else {
+                        console.log('opps');
+                 }
+
 
             const dashBoard = name;
             localStorage.setItem('dash-name', dashBoard);
 
-            if(name !== localStorage.getItem('dash-name')) {
-                console.log('hello');
-                const accName = localStorage.getItem('dash-name');
-                socket.emit('delete-acc', accName);
-            } else {
-                console.log('opps');
-            }
+       
 
             document.querySelector('.dash').innerHTML = localStorage.getItem('dash-name');
 
