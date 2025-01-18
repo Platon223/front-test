@@ -43,6 +43,7 @@ function check() {
 
         if (nameInUse) {
             console.log('This name is already in use.');
+            location.reload();
         } else {
             console.log('You are good to go.');
 
@@ -66,6 +67,7 @@ function check() {
        
 
             document.querySelector('.dash').innerHTML = localStorage.getItem('dash-name');
+            location.reload();
 
         }
 
