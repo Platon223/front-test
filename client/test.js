@@ -2,6 +2,10 @@ const socket = io('https://back-test-1-v9or.onrender.com');
 
 document.querySelector('.dash').innerHTML = localStorage.getItem('dash-name');
 
+socket.on('see-accounts', data => {
+    console.log(data);
+})
+
 
 socket.on('test', data => {
     console.log(data);
